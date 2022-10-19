@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Test
-        run: cd week2/app && go test week2/app/...
+        run: cd week2/app && go test
 
   docker-build-push:
     needs: test
