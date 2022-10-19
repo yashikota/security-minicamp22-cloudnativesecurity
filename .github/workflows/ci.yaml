@@ -18,15 +18,17 @@ jobs:
           go-version: ^1.18
 
   test:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Build
         run: cd week2/app go test week2/app/...
 
   docker-build-push:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
