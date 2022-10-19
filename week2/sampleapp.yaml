@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+      - name: sample-app
+        image: sz4rny/security-minicamp-22-sample-app:baa5b95ecf49150431a72dde0edc73e0cdbb31a2
+        ports:
+        - containerPort: 8080
